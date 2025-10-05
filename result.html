@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Analysis Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="gradient-bg"></div>
+
+  <div class="container">
+    <h2 class="title">📊 Resume Analysis Report</h2>
+    <div class="result-box">
+      <p><strong>Match Percentage:</strong> <span class="highlight">{{ result.match_percent }}%</span></p>
+      <p><strong>Skills Found:</strong> {{ result.skills_found }}</p>
+      <p><strong>Missing Skills:</strong> {{ result.missing_skills }}</p>
+    </div>
+    <a href="/" class="back-btn">⬅ Back to Upload</a>
+  </div>
+
+  <footer>
+    <p>🚀 Powered by Flask & spaCy</p>
+  </footer>
+</body>
+</html>
