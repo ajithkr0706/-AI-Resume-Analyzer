@@ -1,0 +1,301 @@
+/* Import a clean, modern font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* ===== Global Layout ===== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* ===== Animated Gradient Background ===== */
+.gradient-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ff00cc, #3333ff, #00ffcc, #ffcc00);
+  background-size: 400% 400%;
+  z-index: -1;
+  animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== Main Card ===== */
+.container {
+  width: 450px;
+  margin: 100px auto;
+  padding: 40px 30px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.4);
+  text-align: center;
+  animation: fadeIn 1.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Title / Subtitle ===== */
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
+
+.subtitle {
+  font-size: 15px;
+  margin-bottom: 25px;
+  color: #dcdcdc;
+}
+
+/* ===== File Upload ===== */
+input[type="file"] {
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  width: 80%;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+input[type="file"]:hover {
+  background: #fff;
+  transform: scale(1.02);
+}
+
+/* ===== Button ===== */
+button {
+  margin-top: 15px;
+  background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 12px 35px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0,114,255,0.5);
+}
+
+button:hover {
+  background: linear-gradient(90deg, #0072ff 0%, #00c6ff 100%);
+  box-shadow: 0 0 25px rgba(0,114,255,0.8);
+  transform: translateY(-2px);
+}
+
+/* ===== Result Box ===== */
+.result-box {
+  margin-top: 25px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+}
+
+.highlight {
+  color: #00ffcc;
+  font-weight: 600;
+}
+
+/* ===== Back Button ===== */
+.back-btn {
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  background: linear-gradient(90deg, #ff512f, #dd2476);
+  padding: 10px 25px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.back-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 81, 47, 0.7);
+}
+
+/* ===== Footer ===== */
+footer {
+  position: fixed;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  color: #ffffffa0;
+}
+
+/* ===== New Enhancements UI ===== */
+
+/* Input Groups */
+.input-group {
+  text-align: left;
+  margin: 15px auto;
+  width: 85%;
+}
+
+.input-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 5px;
+  display: block;
+}
+
+textarea#job_description {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  border: none;
+  font-family: inherit;
+  resize: vertical;
+  transition: 0.3s ease;
+  box-sizing: border-box;
+}
+
+textarea#job_description:focus {
+  outline: 2px solid #00c6ff;
+  background: #fff;
+}
+
+input[type="file"] {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 10px 0;
+}
+
+/* Result Container */
+.result-container {
+  width: 550px;
+  text-align: left;
+}
+
+.result-container p {
+  margin: 8px 0;
+}
+
+/* Entity Box */
+.entity-box {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 4px solid #00ffcc;
+}
+
+/* Progress Bar */
+.progress-section {
+  margin-bottom: 20px;
+}
+
+.progress-bar-container {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 12px;
+  margin-top: 8px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #00ffcc, #0072ff);
+  border-radius: 10px;
+  transition: width 1s ease-in-out;
+}
+
+/* Skill Pills */
+.skills-section {
+  margin-top: 15px;
+}
+
+.pill-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.pill {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-block;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.pill-green {
+  background: rgba(0, 255, 136, 0.2);
+  color: #00ffcc;
+  border: 1px solid #00ffcc;
+}
+
+.pill-red {
+  background: rgba(255, 51, 102, 0.2);
+  color: #ff3366;
+  border: 1px solid #ff3366;
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.text-muted {
+  color: #bbb;
+  font-style: italic;
+  font-size: 14px;
+}
+
+/* Domain Classification Styling */
+.domain-box {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.domain-label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #e0e0e0;
+}
+
+.domain-badge {
+  background: linear-gradient(135deg, #00ffcc 0%, #0072ff 100%);
+  color: #111;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(0, 255, 204, 0.3);
+  text-shadow: none;
+}
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Analysis Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="gradient-bg"></div>
+
+  <div class="container result-container">
+    <h2 class="title">📊 Resume Analysis Report</h2>
+    <div class="result-box">
+      <!-- Predicted Domain Badge -->
+      <div class="domain-box">
+        <span class="domain-label">🔍 Predicted Domain:</span>
+        <span class="domain-badge">{{ result.predicted_category }}</span>
+      </div>
+
+      <!-- Entity Extraction -->
+      <div class="entity-box">
+        <p><strong>Email:</strong> {{ result.email }}</p>
+        <p><strong>Phone:</strong> {{ result.phone }}</p>
+      </div>
+
+      <!-- Match Percentage Progress Bar -->
+      <div class="progress-section">
+        <p><strong>Match Score:</strong> <span class="highlight">{{ result.match_percent }}%</span></p>
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: {{ result.match_percent }}%;"></div>
+        </div>
+      </div>
+
+      <!-- Skills Display -->
+      <div class="skills-section">
+        <p><strong>Skills Matched:</strong></p>
+        <div class="pill-container">
+          {% if result.skills_found %}
+            {% for skill in result.skills_found %}
+              <span class="pill pill-green">{{ skill }}</span>
+            {% endfor %}
+          {% else %}
+            <span class="text-muted">None found</span>
+          {% endif %}
+        </div>
+
+        <p class="mt-15"><strong>Skills Missing:</strong></p>
+        <div class="pill-container">
+          {% if result.missing_skills %}
+            {% for skill in result.missing_skills %}
+              <span class="pill pill-red">{{ skill }}</span>
+            {% endfor %}
+          {% else %}
+            <span class="text-muted">No missing skills!</span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <a href="/" class="back-btn">⬅ Back to Upload</a>
+  </div>
+
+  <footer>
+    <p>🚀 Powered by Flask & spaCy</p>
+  </footer>
+</body>
+</html>
